@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form action="/updatedetails" method="post">
+        <table>
+            <tr>
+                <td>
+                    Empid : 
+                </td>
+                <td>
+                    <input type="text" id="eid" name="eid"  value="<%=emp.empid%>" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ename : 
+                </td>
+                <td>
+                    <input type="text" id="enm" name="enm" value="<%=emp.ename%>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sal : 
+                </td>
+                <td>
+                    <input type="text" id="esal" name="esal" value="<%=emp.sal%>">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" id="btn2" name="btn2" value="btn2">Update Details</button>
+                </td>
+            </tr>
+                </table>
+    </form>
+</body>
+</html>

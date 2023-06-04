@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            function validateDetails(id,msg)
+            {
+                var data=$('#'+id).val();
+                if(data!=="" && data.trim().length>0)
+                {
+                    $('#'+msg).html("");
+                    return true;
+                }
+                else{
+                    $('#'+msg).html("this field cannot be empty");
+                    return false;
+                }
+            }
+            function validateUser()
+            {
+                var flag3=validateDetails("uname","unerr");
+                var flag4=validateDetails("passwd","pwderr");
+                if(flag3 && flag4)
+                {
+                    return true;
+
+                }
+                else{
+                    return false;
+                }
+            }
+            function authenticate()
+            {
+                var cond=validateUser();
+                return cond;
+            }
+        })
+    </script>
+</head>
+<body>
+    <form action="/validateuser" method="post" onsubmit="return authenticate()">
+        <table>
+            <tr>
+                <td>
+                    Username : 
+                </td>
+                <td>
+                    <input type="text" id="uname" name="uname"><span id="unerr"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password :
+                </td>
+                <td>
+                    <input type="password" id="passwd" name="passwd"><span id="pwderr"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button type="submit" id="btn3" name="btn3" value="login">Login</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
